@@ -6,9 +6,9 @@ RUN apt update \
 COPY ./requirements.txt /app/requirements.txt
 RUN pip install -r /app/requirements.txt
 
-COPY ./hello.py /app
+COPY . /app
 
 WORKDIR /app
 
-ENTRYPOINT [ "streamlit", "run" ]
-CMD ["/app/hello.py"]
+ENTRYPOINT [ "/bin/bash" ]
+CMD ["run.sh"]
